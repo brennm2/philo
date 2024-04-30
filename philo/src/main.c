@@ -6,43 +6,78 @@
 /*   By: bde-souz <bde-souz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 12:23:59 by bde-souz          #+#    #+#             */
-/*   Updated: 2024/04/29 16:57:06 by bde-souz         ###   ########.fr       */
+/*   Updated: 2024/04/30 16:45:52 by bde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/philo.h"
 
-void	ft_init_philo(int number_of_philosopher, int time_to_die,
-	int time_to_eat, int time_to_sleep, t_philo *philo)
+void	ft_init_data(char **av, t_philo *philos, t_data *data)
 {
-	philo->data = malloc(sizeof(*(philo->data)));
-	if (number_of_philosopher < 1 || time_to_die < 0 || time_to_eat < 0 || 
-		time_to_sleep < 0)
-		{
-			printf("\nProblem with number on the arguments\n\n");
-			return ;
-		}
-	philo->data->number_of_philosopher = number_of_philosopher;
-	philo->data->time_to_die = time_to_die;
-	philo->data->time_to_eat = time_to_eat;
-	philo->data->time_to_sleep = time_to_sleep;
-	printf("Number of Philos: %d\n", philo->data->number_of_philosopher);
-	printf("Time to die: %ld\n", philo->data->time_to_die);
-	printf("Time to eat: %ld\n", philo->data->time_to_eat);
-	printf("Time to sleep: %ld\n", philo->data->time_to_sleep);
+	// if (ft_atoi(av[1]) < 1 || ft_atoi(av[2]) < 0 || ft_atoi(av[3]) < 0
+	// 	|| ft_atoi(av[4]) < 0)
+	// {
+	// 	write(2, ERROR_ARGS, 44);
+	// 	return (1);
+	// }
+	data->is_dead = 0;
+	data->philos = philos;
+	pthread_mutex_init(&data->dead_lock, NULL);
+	pthread_mutex_init(&data->meal_lock, NULL);
+	pthread_mutex_init(&data->write_lock, NULL);
+
+	// if (av[5])
+	// 	data->philos->meals_number = ft_atoi(av[5]);
+	// else
+	// 	data->philos->meals_number = -1;
 }
 
-
-
-int main(int ac, char **av)
+void	ft_init_forks(pthread_mutex_t *forks, int number)
 {
-	t_philo	philo;
+	int i;
+
+	i = 0;
+	while(i < number)
+	{
+		pthread_mutex_init(&forks[i], NULL);
+		i++;
+	}
+}
+
+void	ft_init_philos(t_philo *philos, t_data *data, pthread_mutex_t *forks, char **av)
+{
+	int	i;
+
+	i = 0;
+	while(i < ft_atoi(av[1]))
+	{
+		philos[i].id = i;
+		philos[i].is_eating = 0;
+		philos[i].meals_eaten = 0;
+		philos[i].number_of_philosopher = ft_atoi(av[1]);
+		philos[i].dead = 0;
+		
+	}
+}
+
+int	main(int ac, char **av)
+{
+	t_philo		philos[200];
+	t_data		data;
+	pthread_mutex_t	forks[200];
 	
 	if (ac < 5 || ac > 6)
-		return(write(1, "\nYou need 4 or 5 arguments!\n\n", 30), 1);
+		return (write(1, "\nYou need 4 or 5 arguments!\n\n", 30), 1);
 	if(check_args(av))
-			return (1);
-	ft_init_philo(ft_atoi(av[1]), ft_atoi(av[2]), ft_atoi(av[3]), ft_atoi(av[4]), &philo);
+		return (1);
+	ft_init_data(av, philos, &data);
+	ft_init_forks(forks, ft_atoi(av[1]));
+	ft_init_philos(philos, &data, forks, av)
+	//if (init_alloc(&data, philo))
+	//	return (1);
+	
+	
+	// init_data(data, )
 }
 
 

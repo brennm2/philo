@@ -12,6 +12,7 @@ NC=\033[0m
 
 SRC = src/main.c \
 	src/utils/arg_utils.c \
+	src/utils/free_exit.c \
 		
 
 
