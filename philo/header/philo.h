@@ -6,7 +6,7 @@
 /*   By: bde-souz <bde-souz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 11:28:53 by bde-souz          #+#    #+#             */
-/*   Updated: 2024/05/03 11:50:50 by bde-souz         ###   ########.fr       */
+/*   Updated: 2024/05/03 15:37:59 by bde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@
 # define ERROR_THREAD_PHILOS "ERROR! Problem when creating thread of Philos!\n"
 # define ERROR_JOIN_GLADOS "ERROR! Problem when joining thread of Glados!\n"
 # define ERROR_JOIN_PHILOS "ERROR! Problem when joining thread of Glados!\n"
-
 
 
 
@@ -92,5 +91,8 @@ void	ft_clear_all(char *str, t_data *data, pthread_mutex_t *forks);
 
 // SRC/UTILS/GET_TIME
 size_t	get_time(void);
+
+// SRC/THREADS
+int	ft_check_is_dead(t_philo *philos);
 
 #endif

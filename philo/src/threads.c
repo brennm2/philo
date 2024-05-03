@@ -6,7 +6,7 @@
 /*   By: bde-souz <bde-souz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 10:01:29 by bde-souz          #+#    #+#             */
-/*   Updated: 2024/05/03 14:28:17 by bde-souz         ###   ########.fr       */
+/*   Updated: 2024/05/03 14:35:20 by bde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,7 @@ void	*ft_philo_day(void *philos)
 	return (philos);
 }
 
-void	*ft_wakeup_glados(void *data)
-{
-	
-}
+
 
 
 int	create_thread(t_data *data, pthread_mutex_t *forks)
