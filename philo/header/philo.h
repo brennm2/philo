@@ -6,7 +6,7 @@
 /*   By: bde-souz <bde-souz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 11:28:53 by bde-souz          #+#    #+#             */
-/*   Updated: 2024/05/03 15:37:59 by bde-souz         ###   ########.fr       */
+/*   Updated: 2024/05/03 16:09:33 by bde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,18 +81,24 @@ typedef struct	s_data
 //            };
 
 // SRC/UTILS/ARG_UTILS
-int	ft_atoi(const char *str);
-int	check_for_int(char **av);
-int	check_args(char **av);
-int	ft_strlen(char *str);
+int			ft_atoi(const char *str);
+int			check_for_int(char **av);
+int			check_args(char **av);
+int			ft_strlen(char *str);
 
 // SRC/UTILS/FREE_EXIT
-void	ft_clear_all(char *str, t_data *data, pthread_mutex_t *forks);
+void		ft_clear_all(char *str, t_data *data, pthread_mutex_t *forks);
 
 // SRC/UTILS/GET_TIME
-size_t	get_time(void);
+size_t		get_time(void);
+void		ft_usleep(size_t milsecond);
 
 // SRC/THREADS
-int	ft_check_is_dead(t_philo *philos);
+int			create_thread(t_data *data, pthread_mutex_t *forks);
+int			ft_check_is_dead(t_philo *philos);
+
+// SRC/GLADOS
+void		*ft_wakeup_glados(void *philos);
+
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: bde-souz <bde-souz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 12:23:59 by bde-souz          #+#    #+#             */
-/*   Updated: 2024/05/03 09:59:23 by bde-souz         ###   ########.fr       */
+/*   Updated: 2024/05/03 15:58:41 by bde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,11 +92,7 @@ int	main(int ac, char **av)
 	ft_init_data(av, philos, &data);
 	ft_init_forks(forks, ft_atoi(av[1]));
 	ft_init_philos(philos, &data, forks, av);
-	//if (init_alloc(&data, philo))
-	//	return (1);
-	
-	
-	// init_data(data, )
+	create_thread(&data, forks);
 }
 
 

@@ -11,6 +11,8 @@ YELLOW=\033[1;93m
 NC=\033[0m
 
 SRC = src/main.c \
+	src/threads.c \
+	src/glados.c \
 	src/utils/arg_utils.c \
 	src/utils/free_exit.c \
 	src/utils/time_utils.c \
