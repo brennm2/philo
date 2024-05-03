@@ -6,7 +6,7 @@
 /*   By: bde-souz <bde-souz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 11:28:53 by bde-souz          #+#    #+#             */
-/*   Updated: 2024/04/30 16:05:45 by bde-souz         ###   ########.fr       */
+/*   Updated: 2024/05/02 14:12:32 by bde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,23 +37,23 @@
 typedef struct s_philo
 {
 	pthread_t			thread;
-	int					id;
-	int					is_eating;
-	int					meals_eaten;
-	int					meals_number;
-	int					number_of_philosopher;
-	int					*dead;
+	int					id;//
+	int					is_eating;//
+	int					meals_eaten;//
+	int					meals_number;//
+	int					*dead;//
+	int					number_of_philosopher;//
 	size_t				last_meal;
-	size_t				time_to_die;
-	size_t				time_to_eat;
-	size_t				time_to_sleep;
+	size_t				time_to_die; //
+	size_t				time_to_eat; //
+	size_t				time_to_sleep; //
 	size_t				start_time;
 
 	pthread_mutex_t		*right_fork;
 	pthread_mutex_t		*left_fork;
-	pthread_mutex_t		*write_lock;
-	pthread_mutex_t		*dead_lock;
-	pthread_mutex_t		*meal_lock;
+	pthread_mutex_t		*write_lock;//
+	pthread_mutex_t		*dead_lock;//
+	pthread_mutex_t		*meal_lock;//
 	
 }						t_philo;
 
@@ -82,5 +82,8 @@ int	check_args(char **av);
 // SRC/UTILS/FREE_EXIT
 void ft_free(t_data *data, int flag);
 int	ft_error(char *str, t_data *data, int flag);
+
+// SRC/UTILS/GET_TIME
+size_t	get_time(void);
 
 #endif
