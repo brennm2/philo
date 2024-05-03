@@ -6,7 +6,7 @@
 /*   By: bde-souz <bde-souz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 12:23:59 by bde-souz          #+#    #+#             */
-/*   Updated: 2024/05/03 09:53:30 by bde-souz         ###   ########.fr       */
+/*   Updated: 2024/05/03 09:59:23 by bde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,12 +71,11 @@ void	ft_init_philos(t_philo *philos, t_data *data, pthread_mutex_t *forks, char 
 		philos[i].start_time = get_time();
 		philos[i].last_meal = get_time();
 		philos[i].left_fork = &forks[i];
-		if(ft_atoi(av[1]) == 0)
+		if(i == 0)
 			philos[i].right_fork = &forks[ft_atoi(av[1]) - 1];
 		else
 			philos[i].right_fork = &forks[i - 1];
 		i++;
-		
 	}
 }
 
