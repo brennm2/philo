@@ -6,7 +6,7 @@
 /*   By: bde-souz <bde-souz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 11:28:53 by bde-souz          #+#    #+#             */
-/*   Updated: 2024/05/03 16:09:33 by bde-souz         ###   ########.fr       */
+/*   Updated: 2024/05/06 10:43:51 by bde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ typedef struct s_philo
 	int					is_eating;//
 	int					meals_eaten;//
 	int					meals_number;//
-	int					*dead;//
+	int					dead;//
 	int					number_of_philosopher;//
 	size_t				last_meal;
 	size_t				time_to_die; //
