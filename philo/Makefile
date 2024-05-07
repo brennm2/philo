@@ -21,7 +21,6 @@ SRC = src/main.c \
 
 
 OBJ = $(SRC:.c=.o)
-LOCATION = obj/
 
 all: $(NAME)
 
@@ -36,7 +35,7 @@ $(NAME): $(OBJ)
 
 
 clean:
-	$(RM) $(RMFLAGS) obj/* $(OBJ)
+	$(RM) $(RMFLAGS) $(OBJ)
 
 	@echo "\n${YELLOW}-----------------------------"
 	@echo "${YELLOW}| ${GREEN}Cleaned all ${RED}program${GREEN} files ${YELLOW}|"
@@ -50,5 +49,3 @@ fclean: clean
 	@echo "${YELLOW}--------------------------------${NC}\n"
 
 re: fclean all
-
-DEBUG: CC =+ valgrind
