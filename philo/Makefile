@@ -2,7 +2,7 @@ NAME = philo
 
 
 CC = gcc -g
-CCFLAGS = -Wall -Werror -Wextra 
+CCFLAGS = -Wall -Werror -Wextra -O3 -pthread
 RM = rm
 RMFLAGS= -f
 GREEN=\033[0;32m
@@ -13,10 +13,10 @@ NC=\033[0m
 SRC = src/main.c \
 	src/threads.c \
 	src/glados.c \
+	src/philo_day.c\
 	src/utils/arg_utils.c \
 	src/utils/free_exit.c \
 	src/utils/time_utils.c \
-		
 
 
 

@@ -6,7 +6,7 @@
 /*   By: bde-souz <bde-souz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 11:28:53 by bde-souz          #+#    #+#             */
-/*   Updated: 2024/05/06 10:43:51 by bde-souz         ###   ########.fr       */
+/*   Updated: 2024/05/07 11:15:55 by bde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,6 +99,11 @@ int			ft_check_is_dead(t_philo *philos);
 
 // SRC/GLADOS
 void		*ft_wakeup_glados(void *philos);
+void		glados_speak(char *str, t_philo *philos, int philo_id);
 
+// SRC/PHILO_DAY
+void		ft_eat(t_philo *philos);
+void		ft_think(t_philo *philos);
+void		ft_sleep(t_philo *philos);
 
 #endif

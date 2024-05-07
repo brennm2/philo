@@ -6,7 +6,7 @@
 /*   By: bde-souz <bde-souz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 10:01:29 by bde-souz          #+#    #+#             */
-/*   Updated: 2024/05/06 10:44:52 by bde-souz         ###   ########.fr       */
+/*   Updated: 2024/05/07 11:44:10 by bde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	ft_check_is_dead(t_philo *philos)
 {
 	pthread_mutex_lock(philos->dead_lock);
-	if (philos->dead == 1);
+	if (philos->dead == 1)
 		return (pthread_mutex_unlock(philos->dead_lock), 1);
 	pthread_mutex_unlock(philos->dead_lock);
 	return (0);
@@ -25,19 +25,17 @@ void	*ft_philo_day(void *philos)
 {
 	t_philo	*temp_philos;
 
-	temp_philos = philos;
+	temp_philos = (t_philo *)philos;
 	if(temp_philos->id % 2 == 0)
 		ft_usleep(1);
 	while(ft_check_is_dead(temp_philos) != 1)
 	{
-		//ft_eat(temp_philos);
-		//ft_sleep(temp_philos);
-		//ft_think(temp_philos);
+		ft_eat(temp_philos);
+		ft_sleep(temp_philos);
+		ft_think(temp_philos);
 	}
 	return (philos);
 }
-
-
 
 
 int	create_thread(t_data *data, pthread_mutex_t *forks)

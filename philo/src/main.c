@@ -6,7 +6,7 @@
 /*   By: bde-souz <bde-souz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 12:23:59 by bde-souz          #+#    #+#             */
-/*   Updated: 2024/05/03 15:58:41 by bde-souz         ###   ########.fr       */
+/*   Updated: 2024/05/07 11:32:48 by bde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,11 @@
 
 void	ft_init_data(char **av, t_philo *philos, t_data *data)
 {
-	// if (ft_atoi(av[1]) < 1 || ft_atoi(av[2]) < 0 || ft_atoi(av[3]) < 0
-	// 	|| ft_atoi(av[4]) < 0)
-	// {
-	// 	write(2, ERROR_ARGS, 44);
-	// 	return (1);
-	// }
 	data->is_dead = 0;
 	data->philos = philos;
 	pthread_mutex_init(&data->dead_lock, NULL);
 	pthread_mutex_init(&data->meal_lock, NULL);
 	pthread_mutex_init(&data->write_lock, NULL);
-
-
 }
 
 void	ft_init_forks(pthread_mutex_t *forks, int number)

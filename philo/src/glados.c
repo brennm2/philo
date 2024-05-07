@@ -6,7 +6,7 @@
 /*   By: bde-souz <bde-souz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 14:35:22 by bde-souz          #+#    #+#             */
-/*   Updated: 2024/05/06 16:15:48 by bde-souz         ###   ########.fr       */
+/*   Updated: 2024/05/07 11:48:55 by bde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	glados_speak(char *str, t_philo *philos, int philo_id)
 
 	pthread_mutex_lock(philos->write_lock);
 	time = get_time() - philos->start_time;
-	if(ft_check_is_dead(philos) == 1)
+	if(ft_check_is_dead(philos) != 1)
 		printf("[%zu] Philo %d %s\n", time, philo_id, str);
 	pthread_mutex_unlock(philos->write_lock);
 }
