@@ -6,7 +6,7 @@
 /*   By: bde-souz <bde-souz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 10:44:36 by bde-souz          #+#    #+#             */
-/*   Updated: 2024/05/07 15:41:04 by bde-souz         ###   ########.fr       */
+/*   Updated: 2024/05/07 16:05:53 by bde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	ft_think(t_philo *philos)
 void	ft_eat(t_philo *philos)
 {
 	pthread_mutex_lock(philos->right_fork);
-	glados_speak("has taken a fork", philos, philos->id);
+	glados_speak(C_CYAN"has taken a fork"END_COLOR, philos, philos->id);
 	if (philos->number_of_philosopher == 1)
 	{
 		ft_usleep(philos->time_to_die);
@@ -34,9 +34,9 @@ void	ft_eat(t_philo *philos)
 		return ;
 	}
 	pthread_mutex_lock(philos->left_fork);
-	glados_speak("has taken a fork", philos, philos->id);
+	glados_speak(C_CYAN"has taken a fork"END_COLOR, philos, philos->id);
 	philos->is_eating = 1;
-	glados_speak("is eating", philos, philos->id);
+	glados_speak(C_YELLOW"is eating"END_COLOR, philos, philos->id);
 	pthread_mutex_lock(philos->meal_lock);
 	philos->last_meal = get_time();
 	philos->meals_eaten++;

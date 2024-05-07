@@ -1,7 +1,7 @@
 NAME = philo
 
 
-CC = gcc -g
+CC = cc
 CCFLAGS = -Wall -Werror -Wextra -O3 -pthread
 RM = rm
 RMFLAGS= -f
@@ -50,3 +50,5 @@ fclean: clean
 	@echo "${YELLOW}--------------------------------${NC}\n"
 
 re: fclean all
+
+DEBUG: CC =+ valgrind

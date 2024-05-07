@@ -6,7 +6,7 @@
 /*   By: bde-souz <bde-souz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 14:35:22 by bde-souz          #+#    #+#             */
-/*   Updated: 2024/05/07 15:40:44 by bde-souz         ###   ########.fr       */
+/*   Updated: 2024/05/07 16:08:36 by bde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	glados_speak(char *str, t_philo *philos, int philo_id)
 	pthread_mutex_lock(philos->write_lock);
 	time = get_time() - philos->start_time;
 	if (ft_check_is_dead(philos) != 1)
-		printf("%zu %d %s\n", time, philo_id, str);
+		printf(C_BLUE"%zu" C_GREEN" %d "END_COLOR "%s\n", time, philo_id, str);
 	pthread_mutex_unlock(philos->write_lock);
 }
 
@@ -45,7 +45,7 @@ int	ft_find_dead(t_philo *philos)
 	{
 		if (ft_is_dead(&philos[i]))
 		{
-			glados_speak("died", philos, philos[i].id);
+			glados_speak(C_RED"died"END_COLOR, philos, philos[i].id);
 			pthread_mutex_lock(philos[i].dead_lock);
 			*philos[i].dead = 1;
 			pthread_mutex_unlock(philos[i].dead_lock);
