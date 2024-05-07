@@ -6,7 +6,7 @@
 /*   By: bde-souz <bde-souz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 10:01:29 by bde-souz          #+#    #+#             */
-/*   Updated: 2024/05/07 11:44:10 by bde-souz         ###   ########.fr       */
+/*   Updated: 2024/05/07 14:58:32 by bde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	ft_check_is_dead(t_philo *philos)
 {
 	pthread_mutex_lock(philos->dead_lock);
-	if (philos->dead == 1)
+	if (*philos->dead == 1)
 		return (pthread_mutex_unlock(philos->dead_lock), 1);
 	pthread_mutex_unlock(philos->dead_lock);
 	return (0);

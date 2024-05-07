@@ -6,7 +6,7 @@
 /*   By: bde-souz <bde-souz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 12:23:59 by bde-souz          #+#    #+#             */
-/*   Updated: 2024/05/07 11:32:48 by bde-souz         ###   ########.fr       */
+/*   Updated: 2024/05/07 14:57:12 by bde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	ft_init_philos(t_philo *philos, t_data *data, pthread_mutex_t *forks, char 
 		philos[i].id = i + 1;
 		philos[i].is_eating = 0;
 		philos[i].meals_eaten = 0;
-		philos[i].dead = 0;
+		philos[i].dead = &data->is_dead;
 		ft_init_philos_suport(philos, av, i);
 		philos[i].write_lock = &data->write_lock;
 		philos[i].dead_lock = &data->dead_lock;
@@ -85,6 +85,7 @@ int	main(int ac, char **av)
 	ft_init_forks(forks, ft_atoi(av[1]));
 	ft_init_philos(philos, &data, forks, av);
 	create_thread(&data, forks);
+	ft_clear_all(NULL, &data, forks);
 }
 
 
