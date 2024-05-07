@@ -6,7 +6,7 @@
 /*   By: bde-souz <bde-souz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 14:35:22 by bde-souz          #+#    #+#             */
-/*   Updated: 2024/05/07 15:04:48 by bde-souz         ###   ########.fr       */
+/*   Updated: 2024/05/07 15:40:44 by bde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	glados_speak(char *str, t_philo *philos, int philo_id)
 
 	pthread_mutex_lock(philos->write_lock);
 	time = get_time() - philos->start_time;
-	if(ft_check_is_dead(philos) != 1)
+	if (ft_check_is_dead(philos) != 1)
 		printf("%zu %d %s\n", time, philo_id, str);
 	pthread_mutex_unlock(philos->write_lock);
 }
@@ -26,8 +26,8 @@ void	glados_speak(char *str, t_philo *philos, int philo_id)
 int	ft_is_dead(t_philo *philos)
 {
 	pthread_mutex_lock(philos->meal_lock);
-	if(get_time() - philos->last_meal >= philos->time_to_die &&
-		philos->is_eating == 0)
+	if (get_time() - philos->last_meal >= philos->time_to_die
+		&& philos->is_eating == 0)
 	{
 		pthread_mutex_unlock(philos->meal_lock);
 		return (1);
@@ -41,9 +41,9 @@ int	ft_find_dead(t_philo *philos)
 	int	i;
 
 	i = 0;
-	while(i < philos->number_of_philosopher)
+	while (i < philos->number_of_philosopher)
 	{
-		if(ft_is_dead(&philos[i]))
+		if (ft_is_dead(&philos[i]))
 		{
 			glados_speak("died", philos, philos[i].id);
 			pthread_mutex_lock(philos[i].dead_lock);
@@ -65,10 +65,10 @@ int	ft_eat_all_meals(t_philo *philos)
 	meals_counter = 0;
 	if (philos->meals_number == -1)
 		return (0);
-	while(i < philos->number_of_philosopher)
+	while (i < philos->number_of_philosopher)
 	{
 		pthread_mutex_lock(philos[i].meal_lock);
-		if(philos[i].meals_eaten >= philos[i].meals_number)
+		if (philos[i].meals_eaten >= philos[i].meals_number)
 			meals_counter++;
 		pthread_mutex_unlock(philos[i].meal_lock);
 		i++;
@@ -80,7 +80,7 @@ int	ft_eat_all_meals(t_philo *philos)
 		pthread_mutex_unlock(philos->dead_lock);
 		return (1);
 	}
-	return(0);
+	return (0);
 }
 
 void	*ft_wakeup_glados(void *philos)
@@ -88,9 +88,9 @@ void	*ft_wakeup_glados(void *philos)
 	t_philo	*temp_philos;
 
 	temp_philos = (t_philo *)philos;
-	while(1)
+	while (1)
 	{
-		if(ft_find_dead(philos) == 1 || ft_eat_all_meals(philos) == 1)
+		if (ft_find_dead(philos) == 1 || ft_eat_all_meals(philos) == 1)
 			break ;
 	}
 	return (philos);

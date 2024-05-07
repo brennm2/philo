@@ -6,7 +6,7 @@
 /*   By: bde-souz <bde-souz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 11:56:46 by bde-souz          #+#    #+#             */
-/*   Updated: 2024/05/03 15:34:47 by bde-souz         ###   ########.fr       */
+/*   Updated: 2024/05/07 15:32:38 by bde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft_clear_all(char *str, t_data *data, pthread_mutex_t *forks)
 	pthread_mutex_destroy(&data->write_lock);
 	pthread_mutex_destroy(&data->dead_lock);
 	pthread_mutex_destroy(&data->meal_lock);
-	while(i < data->philos->number_of_philosopher)
+	while (i < data->philos->number_of_philosopher)
 	{
 		pthread_mutex_destroy(&forks[i]);
 		i++;

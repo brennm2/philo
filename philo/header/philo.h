@@ -6,7 +6,7 @@
 /*   By: bde-souz <bde-souz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 11:28:53 by bde-souz          #+#    #+#             */
-/*   Updated: 2024/05/07 14:56:10 by bde-souz         ###   ########.fr       */
+/*   Updated: 2024/05/07 15:42:04 by bde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,32 +38,29 @@
 # define ERROR_JOIN_GLADOS "ERROR! Problem when joining thread of Glados!\n"
 # define ERROR_JOIN_PHILOS "ERROR! Problem when joining thread of Glados!\n"
 
-
-
 typedef struct s_philo
 {
 	pthread_t			thread;
-	int					id;//
-	int					is_eating;//
-	int					meals_eaten;//
-	int					meals_number;//
-	int					*dead;//
-	int					number_of_philosopher;//
+	int					id;
+	int					is_eating;
+	int					meals_eaten;
+	int					meals_number;
+	int					*dead;
+	int					number_of_philosopher;
 	size_t				last_meal;
-	size_t				time_to_die; //
-	size_t				time_to_eat; //
-	size_t				time_to_sleep; //
+	size_t				time_to_die;
+	size_t				time_to_eat;
+	size_t				time_to_sleep;
 	size_t				start_time;
 
 	pthread_mutex_t		*right_fork;
 	pthread_mutex_t		*left_fork;
-	pthread_mutex_t		*write_lock;//
-	pthread_mutex_t		*dead_lock;//
-	pthread_mutex_t		*meal_lock;//
-	
+	pthread_mutex_t		*write_lock;
+	pthread_mutex_t		*dead_lock;
+	pthread_mutex_t		*meal_lock;
 }						t_philo;
 
-typedef struct	s_data
+typedef struct s_data
 {
 	int					is_dead;
 	pthread_mutex_t		dead_lock;
@@ -71,9 +68,6 @@ typedef struct	s_data
 	pthread_mutex_t		write_lock;
 	t_philo				*philos;
 }						t_data;
-
-
-
 
 //  struct timeval {
 //                time_t      tv_sec;     /* seconds */

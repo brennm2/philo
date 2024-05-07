@@ -6,7 +6,7 @@
 /*   By: bde-souz <bde-souz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 12:23:59 by bde-souz          #+#    #+#             */
-/*   Updated: 2024/05/07 14:57:12 by bde-souz         ###   ########.fr       */
+/*   Updated: 2024/05/07 15:36:37 by bde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,12 @@ void	ft_init_data(char **av, t_philo *philos, t_data *data)
 
 void	ft_init_forks(pthread_mutex_t *forks, int number)
 {
-	int i;
+	int	i;
 
 	i = 0;
-	while(i < number)
+	while (i < number)
 	{
-		pthread_mutex_init(&forks[i], NULL);
+		pthread_mutex_init (&forks[i], NULL);
 		i++;
 	}
 }
@@ -45,25 +45,26 @@ void	ft_init_philos_suport(t_philo *philos, char **av, int i)
 		philos[i].meals_number = -1;
 }
 
-void	ft_init_philos(t_philo *philos, t_data *data, pthread_mutex_t *forks, char **av)
+void	ft_init_philos(t_philo *philos, t_data *data,
+	pthread_mutex_t *forks, char **av)
 {
 	int	i;
 
 	i = 0;
-	while(i < ft_atoi(av[1]))
+	while (i < ft_atoi(av[1]))
 	{
 		philos[i].id = i + 1;
 		philos[i].is_eating = 0;
 		philos[i].meals_eaten = 0;
 		philos[i].dead = &data->is_dead;
-		ft_init_philos_suport(philos, av, i);
+		ft_init_philos_suport (philos, av, i);
 		philos[i].write_lock = &data->write_lock;
 		philos[i].dead_lock = &data->dead_lock;
 		philos[i].meal_lock = &data->meal_lock;
 		philos[i].start_time = get_time();
 		philos[i].last_meal = get_time();
 		philos[i].left_fork = &forks[i];
-		if(i == 0)
+		if (i == 0)
 			philos[i].right_fork = &forks[ft_atoi(av[1]) - 1];
 		else
 			philos[i].right_fork = &forks[i - 1];
@@ -73,13 +74,13 @@ void	ft_init_philos(t_philo *philos, t_data *data, pthread_mutex_t *forks, char 
 
 int	main(int ac, char **av)
 {
-	t_philo		philos[200];
-	t_data		data;
+	t_philo			philos[200];
+	t_data			data;
 	pthread_mutex_t	forks[200];
-	
+
 	if (ac < 5 || ac > 6)
 		return (write(1, "\nYou need 4 or 5 arguments!\n\n", 30), 1);
-	if(check_args(av))
+	if (check_args(av))
 		return (1);
 	ft_init_data(av, philos, &data);
 	ft_init_forks(forks, ft_atoi(av[1]));
@@ -87,5 +88,3 @@ int	main(int ac, char **av)
 	create_thread(&data, forks);
 	ft_clear_all(NULL, &data, forks);
 }
-
-
