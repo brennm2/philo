@@ -9,7 +9,7 @@
 			"type": "cppdbg",
 			"request": "launch",
 			"program": "/home/bde-souz/philo/philo/philo",
-			"args": ["5" "400" "100" "100"],
+			"args": ["1" "5" "100" "100"],
 			"stopAtEntry": false,
 			"cwd": "${fileDirname}",
 			"environment": [],
