@@ -18,12 +18,9 @@ SRC = src/main.c \
 	src/utils/free_exit.c \
 	src/utils/time_utils.c \
 
-
-
 OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
-
 
 $(NAME): $(OBJ)
 	$(CC) $(CCFLAGS) $(OBJ) -o $(NAME)

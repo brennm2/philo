@@ -6,7 +6,7 @@
 /*   By: bde-souz <bde-souz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 10:02:36 by bde-souz          #+#    #+#             */
-/*   Updated: 2024/05/08 13:53:40 by bde-souz         ###   ########.fr       */
+/*   Updated: 2024/05/08 15:45:53 by bde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_check_sleep(t_philo *philo)
 {
-	if(*philo->dead == 1)
+	if (*philo->dead == 1)
 		return (1);
 	return (0);
 }
