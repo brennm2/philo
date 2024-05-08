@@ -6,7 +6,7 @@
 /*   By: bde-souz <bde-souz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 10:01:29 by bde-souz          #+#    #+#             */
-/*   Updated: 2024/05/07 15:38:57 by bde-souz         ###   ########.fr       */
+/*   Updated: 2024/05/08 13:55:24 by bde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	*ft_philo_day(void *philos)
 
 	temp_philos = (t_philo *)philos;
 	if (temp_philos->id % 2 == 0)
-		ft_usleep(1);
+		ft_usleep(1, philos);
 	while (ft_check_is_dead(temp_philos) != 1)
 	{
 		ft_eat(temp_philos);

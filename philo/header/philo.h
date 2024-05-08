@@ -6,7 +6,7 @@
 /*   By: bde-souz <bde-souz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 11:28:53 by bde-souz          #+#    #+#             */
-/*   Updated: 2024/05/07 17:29:46 by bde-souz         ###   ########.fr       */
+/*   Updated: 2024/05/08 13:54:13 by bde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ void		ft_clear_all(char *str, t_data *data, pthread_mutex_t *forks);
 
 // SRC/UTILS/GET_TIME
 size_t		get_time(void);
-void		ft_usleep(size_t milsecond);
+void		ft_usleep(size_t milsecond, t_philo *philo);
 
 // SRC/THREADS
 int			create_thread(t_data *data, pthread_mutex_t *forks);

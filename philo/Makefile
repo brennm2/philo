@@ -2,7 +2,7 @@ NAME = philo
 
 
 CC = cc
-CCFLAGS = -Wall -Werror -Wextra -O3 -pthread
+CCFLAGS = -Wall -Werror -Wextra -O3 -pthread -fsanitize=address
 RM = rm
 RMFLAGS= -f
 GREEN=\033[0;32m

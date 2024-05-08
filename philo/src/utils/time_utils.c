@@ -6,19 +6,28 @@
 /*   By: bde-souz <bde-souz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 10:02:36 by bde-souz          #+#    #+#             */
-/*   Updated: 2024/05/07 15:33:29 by bde-souz         ###   ########.fr       */
+/*   Updated: 2024/05/08 13:53:40 by bde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../header/philo.h"
 
-void	ft_usleep(size_t milsecond)
+int	ft_check_sleep(t_philo *philo)
+{
+	if(*philo->dead == 1)
+		return (1);
+	return (0);
+}
+
+void	ft_usleep(size_t milsecond, t_philo *philo)
 {
 	size_t	start_time;
 
 	start_time = get_time();
-	while ((get_time() - start_time) < milsecond)
+	while ((get_time() - start_time) < milsecond && ft_check_sleep(philo) == 0)
+	{
 		usleep(500);
+	}
 }
 
 size_t	get_time(void)
