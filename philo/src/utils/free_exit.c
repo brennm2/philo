@@ -6,11 +6,13 @@
 /*   By: bde-souz <bde-souz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 11:56:46 by bde-souz          #+#    #+#             */
-/*   Updated: 2024/05/09 14:54:07 by bde-souz         ###   ########.fr       */
+/*   Updated: 2024/05/09 15:49:20 by bde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../header/philo.h"
+
+//Clear every mutex in case of some error
 
 void	ft_clear_all(char *str, t_data *data, pthread_mutex_t *forks)
 {
