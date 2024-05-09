@@ -1,0 +1,12 @@
+{
+	"launch": {
+
+		"configurations": [],
+		"compounds": []
+	},
+	"files.autoSave": "afterDelay",
+	"editor.insertSpaces": false,
+	"editor.renderWhitespace": "boundary",
+	"files.trimTrailingWhitespace": true,
+	"files.insertFinalNewline": true
+}

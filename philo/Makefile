@@ -2,7 +2,7 @@ NAME = philo
 
 
 CC = cc
-CCFLAGS = -Wall -Werror -Wextra -O3 -pthread #-fsanitize=thread address / thread
+CCFLAGS = -Wall -Werror -Wextra -O3 -pthread -fsanitize=address #address / thread
 RM = rm
 RMFLAGS= -f
 GREEN=\033[0;32m
@@ -24,7 +24,7 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	$(CC) $(CCFLAGS) $(OBJ) -o $(NAME)
-	
+
 
 	@echo "\n${YELLOW}--------------------------"
 	@echo "${YELLOW}| ${GREEN}All files are compiled ${YELLOW}|"

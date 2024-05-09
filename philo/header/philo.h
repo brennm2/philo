@@ -6,7 +6,7 @@
 /*   By: bde-souz <bde-souz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 11:28:53 by bde-souz          #+#    #+#             */
-/*   Updated: 2024/05/09 11:54:03 by bde-souz         ###   ########.fr       */
+/*   Updated: 2024/05/09 14:53:41 by bde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,11 +77,6 @@ typedef struct s_data
 	pthread_mutex_t		write_lock;
 	t_philo				*philos;
 }						t_data;
-
-//  struct timeval {
-//                time_t      tv_sec;     /* seconds */
-//                suseconds_t tv_usec;    /* microseconds */
-//            };
 
 // SRC/UTILS/ARG_UTILS
 int			ft_atoi(const char *str);
