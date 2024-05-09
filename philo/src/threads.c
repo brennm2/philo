@@ -6,7 +6,7 @@
 /*   By: bde-souz <bde-souz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 10:01:29 by bde-souz          #+#    #+#             */
-/*   Updated: 2024/05/08 13:55:24 by bde-souz         ###   ########.fr       */
+/*   Updated: 2024/05/09 11:53:53 by bde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ int	create_thread(t_data *data, pthread_mutex_t *forks)
 		if (pthread_create(&data->philos[i].thread, NULL, &ft_philo_day,
 				&data->philos[i]) != 0)
 			ft_clear_all(ERROR_THREAD_PHILOS, data, forks);
+		ft_thinking_start(&data->philos[i]);
 		i++;
 	}
 	i = 0;

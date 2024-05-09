@@ -6,11 +6,16 @@
 /*   By: bde-souz <bde-souz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 10:44:36 by bde-souz          #+#    #+#             */
-/*   Updated: 2024/05/08 15:26:32 by bde-souz         ###   ########.fr       */
+/*   Updated: 2024/05/09 13:44:55 by bde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/philo.h"
+
+void	ft_thinking_start(t_philo *philos)
+{
+	glados_speak(C_MAGENTA"is thinking"END_COLOR, philos, philos->id);
+}
 
 void	ft_sleep(t_philo *philos)
 {
@@ -22,9 +27,7 @@ void	ft_think(t_philo *philos)
 {
 	glados_speak(C_MAGENTA"is thinking"END_COLOR, philos, philos->id);
 	if (philos->number_of_philosopher % 2 != 0)
-	{
 		ft_usleep((philos->time_to_eat * 2) - philos->time_to_sleep, philos);
-	}
 	else
 		ft_usleep(1, philos);
 }

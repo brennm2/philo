@@ -6,7 +6,7 @@
 /*   By: bde-souz <bde-souz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 12:23:59 by bde-souz          #+#    #+#             */
-/*   Updated: 2024/05/07 15:36:37 by bde-souz         ###   ########.fr       */
+/*   Updated: 2024/05/09 10:47:57 by bde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ int	main(int ac, char **av)
 	pthread_mutex_t	forks[200];
 
 	if (ac < 5 || ac > 6)
-		return (write(1, "\nYou need 4 or 5 arguments!\n\n", 30), 1);
+		return (write(2, "\nYou need 4 or 5 arguments!\n\n", 30), 1);
 	if (check_args(av))
 		return (1);
 	ft_init_data(av, philos, &data);
