@@ -6,7 +6,7 @@
 /*   By: bde-souz <bde-souz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 11:28:53 by bde-souz          #+#    #+#             */
-/*   Updated: 2024/05/09 14:53:41 by bde-souz         ###   ########.fr       */
+/*   Updated: 2024/05/10 11:22:49 by bde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@
 # define C_CYAN "\e[1;96m"
 # define C_RED "\e[6;31m"
 # define END_COLOR "\e[0m"
+// ------------------
 
 # define ERROR_ALLOC_1 "ERROR! Problem with mallocing thread_id\n"
 # define ERROR_ALLOC_2 "ERROR! Problem with mallocing forks\n"
