@@ -201,7 +201,7 @@ The solution is quite simple. Just set the `ft_usleep` function to 1ms in the `f
 </div>
 
 
-* [Philosophers 42 Guide]([https://o-lobster.itch.io/simple-dungeon-crawler-16x16-pixel-pack](https://medium.com/@ruinadd/philosophers-42-guide-the-dining-philosophers-problem-893a24bc0fe2))
-* [Philosophers visualizer]([https://imgur.com/gallery/Yn21yY8](https://nafuka11.github.io/philosophers-visualizer/))
-* [Pthreads in C - Playlist (CodeVault)]([https://www.pixilart.com/art/pay-day-2-cloaker-ef4aab634260c70?ft=tags&ft_id=](https://www.youtube.com/playlist?list=PLfqABt5AS4FmuQf70psXrsMLEDQXNkLq2))
+* [Philosophers 42 Guide](https://medium.com/@ruinadd/philosophers-42-guide-the-dining-philosophers-problem-893a24bc0fe2)
+* [Philosophers visualizer](https://nafuka11.github.io/philosophers-visualizer/)
+* [Pthreads in C - Playlist (CodeVault)](https://www.youtube.com/playlist?list=PLfqABt5AS4FmuQf70psXrsMLEDQXNkLq2)
 * All my friends who helped me do this project
