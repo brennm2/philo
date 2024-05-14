@@ -12,8 +12,6 @@ Solutions to this problem aim to avoid deadlocks by ensuring that philosophers s
 
 
 <br>
-<div align="center">
-
 
 <div align="center">
   <h1>How can I test it?</h1>
@@ -80,7 +78,6 @@ Sometimes, if you set the sleep value too high, the program can get stuck in a s
 
 The problem is that one philosopher dies, because enough time has passed for him to die, but another philosopher keeps sleeping for `200000ms`. This causes a soft lock in the program, and it doesn't finish, since one philosopher has died.
 
-<div align="center">
 Example and solution (on details):
 </p>
 <details>
@@ -117,15 +114,14 @@ void	ft_usleep(size_t milsecond, t_philo *philo)
 <h3>--------- MY deadlock with forks ---------</h3><br>
 </div>
 
-Let's assume you already know what deadlock is and how to find it with `-fsanitize=thread` (If you don't, try asking the friend next to you ;) )<br>
-
+Let's assume you already know what deadlock is and how to find it with `-fsanitize=thread` (If you don't, try asking the friend next to you ;) )
 Then you run the program with the fsanitize flag end... Oh no, deadlocks. I'll tell you how I solved my problem with that.<br>
 
 The funny thing is that it was actually <i>"easy"</i> to solve. My problem was that all the philosophers were trying to take the same fork at the same time, which obviously caused a deadlock.<br>
-What I did to solve it was, <b>IF</b> the philosopher is <b>even</b>, he takes the fork on the `RIGHT` and then takes the one on the `LEFT`.<br>
+
+<p>What I did to solve it was, <b>IF</b> the philosopher is <b>even</b>, he takes the fork on the `RIGHT` and then takes the one on the `LEFT`.<br>
 And if it's <b>odd</b>, it takes the one on the `LEFT` and then the one on the `RIGHT`.
 
-<div align="center">
 Example and solution (on details):
 </p>
 <details>
