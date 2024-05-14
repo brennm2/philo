@@ -10,7 +10,6 @@ Solutions to this problem aim to avoid deadlocks by ensuring that philosophers s
 <br>
 <br>
 
-
 <br>
 
 <div align="center">
@@ -47,7 +46,6 @@ Now you need to put in the following inputs:<br>
 `NUMBER_OF_MEALS` = How many meals that all philosophers have to eat to end the program (this one is optional)<br>
 
 Here is an example:
-<br>
 <br>
 
 ```bash
@@ -203,9 +201,7 @@ The solution is quite simple. Just set the `ft_usleep` function to 1ms in the `f
 </div>
 
 
-* [Wall and floor Texture](https://o-lobster.itch.io/simple-dungeon-crawler-16x16-pixel-pack)
-* [Dallas Texture](https://imgur.com/gallery/Yn21yY8)
-* [Cloaker Texture](https://www.pixilart.com/art/pay-day-2-cloaker-ef4aab634260c70?ft=tags&ft_id=)
-* [Money Bag Texture](https://www.vecteezy.com/vector-art/5146414-money-bag-pixel-art)
-* [Manhole Texture](https://www.vecteezy.com/vector-art/23876320-sewer-drainage-grate-game-pixel-art-vector-illustration)
+* [Philosophers 42 Guide]([https://o-lobster.itch.io/simple-dungeon-crawler-16x16-pixel-pack](https://medium.com/@ruinadd/philosophers-42-guide-the-dining-philosophers-problem-893a24bc0fe2))
+* [Philosophers visualizer]([https://imgur.com/gallery/Yn21yY8](https://nafuka11.github.io/philosophers-visualizer/))
+* [Pthreads in C - Playlist (CodeVault)]([https://www.pixilart.com/art/pay-day-2-cloaker-ef4aab634260c70?ft=tags&ft_id=](https://www.youtube.com/playlist?list=PLfqABt5AS4FmuQf70psXrsMLEDQXNkLq2))
 * All my friends who helped me do this project
