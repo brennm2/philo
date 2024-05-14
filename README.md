@@ -149,21 +149,45 @@ if (philos->id % 2 == 0)
 </details>
 
 
-<br>
-<p>Getting caught:</p>
+<h3>--------- Low sleep time and odd number ---------</h3><br>
+</div>
+
+If you used my solution for deadlocks (or a similar one), now your philosophers can die randomly if the number of philosophers is odd and the sleeping time is short, for example `./philo 5 800 200 100`
+<p>Then, again, you ask yourself, "WHATT?", well... <br>
+
+The problem is that one philosopher dies, because enough time has passed for him to die, but another philosopher keeps sleeping for `200000ms`. This causes a soft lock in the program, and it doesn't finish, since one philosopher has died.
+
+Example and solution (on details):
+</p>
+<details>
 <div align="center">
-  <img src="https://i.imgur.com/JFpW2zX.gif">
+  <img src="https://i.imgur.com/XR534rW.gif">
 </div>
 <br>
-<br>
-<p>And, the end of the game:</p>
-<div align="center">
-  <img src="https://i.imgur.com/OyLdAFl.gif">
-</div>
-</div>
-<br>
-<br>
-<div align="center">
+
+Well, the solution is a simple one, when you run your custom `usleep` function, you have to check if someone has died.<br>
+<p>I did like this:
+  
+```bash
+int	ft_check_sleep(t_philo *philo)
+{
+	if (*philo->dead == 1)
+		return (1);
+	return (0);
+}
+
+void	ft_usleep(size_t milsecond, t_philo *philo)
+{
+	size_t	start_time;
+
+	start_time = get_time();
+	while ((get_time() - start_time) < milsecond && ft_check_sleep(philo) == 0)
+	{
+		usleep(500);
+	}
+}
+```
+</details>
 <h3>--------- The HUD ---------</h3>
 </div>
 <br>
