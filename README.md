@@ -180,7 +180,7 @@ The solution is quite simple. Just set the `ft_usleep` function to 1ms in the `f
 <br>
 <br>
 <div align="center">
-<h3>--------- 42 Rules ---------</h3>
+<h1> 42 Rules </h1>
 </div>
 <br>
 <p>In every project we must follow certain rules, here are the rules for this project:</p>
@@ -197,7 +197,7 @@ The solution is quite simple. Just set the `ft_usleep` function to 1ms in the `f
 <br>
 <br>
 <div align="center">
-<h3>--------- Credits ---------</h3>
+<h1> Credits </h1>
 </div>
 
 
