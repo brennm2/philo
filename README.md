@@ -168,57 +168,17 @@ You can do like this:
 if (philos->number_of_philosopher % 2 != 0)
 		ft_usleep((philos->time_to_eat * 2) - philos->time_to_sleep, philos)
 ```
-
-
 </details>
-<h3>--------- The HUD ---------</h3>
-</div>
-<br>
-<p>The game's HUD has 2 states, 1 - POLICE ASSAULT and 2 - POINT OF NO RETURN.</p>
-<p>The first state indicates that the player has to collect the money bags and shows the total movement.<br>
-The second state indicates that the player has collected all the money bags and needs to leave the map.</p>
-<p>I had a problem with the HUD, as the map can be completely modular, so the size of the window also changes, and you have to re-calculate to place it in the right pixel. So, depending on the size of the map, the HUD won't be perfectly centered on the screen.</p>
-<br>
-<br>
-<div align="center">
-  <img src="https://i.imgur.com/6XXhyzi.gif">
-</div>
-<br>
-<br>
-<div align="center">
-<h3>--------- The Map ---------</h3>
-</div>
-<br>
-<p>The map can be modified, altered or even created in a simple and functional way, as long as it follows these rules:</p>
 
-```bash
-- Only have ONE Player (P)
-- Only have ONE Exit (E)
-- There has to be AT LEAST one Collectible (C)
-- It has to be enclosed by Walls (1)
-- And it needs to be filled with floors (0)
-- You can place enemies (X)
-- It has to be rectangular
-- The player must find a way to collect all the collectibles and reach the exit
-- The map can only use the following characters: 1, 0, E, P, C and X(This will not work if you run the base game)
-- The map extension must be ".ber"
-```
-<br>
-<br>
-<p>Here's a simple example:</p>
+<div align="center">
+<h3>--------- Philosophers stealing food ---------</h3><br>
+</div>
 
-```bash
-11111111111
-1000E0CX001
-1000P00C001
-10011111001
-1X0CX0X0011
-1000C000001
-10011111001
-100C0000001
-1000C000X01
-11111111111
-```
+Sometimes, a philosopher can die randomly, and this can be caused by one of the philosophers “stealing” the turn of another who is waiting.<br>
+
+For example: `Philo 1` has just eaten and is going to sleep. `Philo 3` is waiting for someone to release the forks so he can eat. Then `Philo 1` wakes up and grabs the forks before `Philo 3`, who ends up dying.<br>
+
+The solution is quite simple. Just set the `ft_usleep` function to 1ms in the `ft_think` function. This would be `ft_usleep(1)`. This gives `Philo 3` enough time to pick up the forks and leave `Philo 1` to think.
 <br>
 <br>
 <div align="center">
