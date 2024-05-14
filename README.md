@@ -117,7 +117,7 @@ Then you run the program with the fsanitize flag end... Oh no, deadlocks. I'll t
 
 The funny thing is that it was actually <i>"easy"</i> to solve. My problem was that all the philosophers were trying to take the same fork at the same time, which obviously caused a deadlock.<br>
 
-<p>What I did to solve it was, <b>IF</b> the philosopher is <b>even</b>, he takes the fork on the `RIGHT` and then takes the one on the `LEFT`.<br>
+What I did to solve it was, <b>IF</b> the philosopher is <b>even</b>, he takes the fork on the `RIGHT` and then takes the one on the `LEFT`.<br>
 And if it's <b>odd</b>, it takes the one on the `LEFT` and then the one on the `RIGHT`.
 
 Example and solution (on details):
