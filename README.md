@@ -7,8 +7,9 @@ alternating between eating, sleeping and thinking.
 
 <p>Each philosopher needs two forks to eat, but if everyone takes the fork to their left simultaneously, a deadlock can occur, since no philosopher can eat without the fork to their right. 
 Solutions to this problem aim to avoid deadlocks by ensuring that philosophers share forks in a coordinated way, usually using semaphores or mutexes to control access to resources.
-<br>
-<br>
+<div align="center">
+  <img src="https://i.imgur.com/tYvu8RJ.png">
+</div>
 
 <br>
 
